@@ -1,0 +1,23 @@
+{
+  "name": "ip-address-tracker-master",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html --out-dir=build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EvgeniyNakhay/IP-Address-Tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EvgeniyNakhay/IP-Address-Tracker/issues"
+  },
+  "homepage": "https://github.com/EvgeniyNakhay/IP-Address-Tracker#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
+}
