@@ -19,5 +19,9 @@
   "homepage": "https://github.com/EvgeniyNakhay/IP-Address-Tracker#readme",
   "devDependencies": {
     "parcel-bundler": "^1.12.5"
+  },
+  "dependencies": {
+    "dist": "^0.1.2",
+    "leaflet": "^1.9.4"
   }
 }
