@@ -1,6 +1,6 @@
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
-import { addTileLayer, validateIp } from "./helpers";
+import { addTileLayer, getAddress, validateIp } from "./helpers";
 import icon from "../images/icon-location.svg";
 
 const ipInput = document.querySelector(".search-bar__input");
@@ -30,11 +30,7 @@ L.marker([51.5, -0.09], { icon: markerIcon }).addTo(map);
 
 function getData() {
   if (validateIp(ipInput.value)) {
-    fetch(
-      `https://geo.ipify.org/api/v2/country,city?apiKey=at_grC6CY2oBjqQiOzIVspZ8tIb4XJUN&ipAddress=${ipInput.value}`
-    )
-      .then((response) => response.json())
-      .then((data) => setInfo(data));
+    getAddress(ipInput.valuegit).then((data) => setInfo(data));
   }
 }
 
