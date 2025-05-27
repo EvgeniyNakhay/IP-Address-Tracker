@@ -17,7 +17,6 @@ ipInput.addEventListener("keydown", handleKey);
 const markerIcon = L.icon({
   iconUrl: icon,
   iconSize: [30, 40],
-  //   iconAnchor: [22, 94],
 });
 
 const mapArea = document.querySelector(".map");
@@ -46,12 +45,14 @@ function handleKey(e) {
 }
 
 function setInfo(mapData) {
-  console.log(mapData);
+  const { lat, lng, country, timezone, region } = mapData.location;
   ipInfo.innerHTML = mapData.ip;
-  locationInfo.innerHTML =
-    mapData.location.country + " " + mapData.location.region;
+  locationInfo.innerHTML = country + " " + region;
 
-  timezoneInfo.innerHTML = mapData.location.timezone;
+  timezoneInfo.innerHTML = timezone;
   ispInfo.innerHTML = mapData.isp;
+
+  map.setView([lat, lng]);
+  L.marker([lat, lng], { icon: markerIcon }).addTo(map);
+  console.log(mapData);
 }
-// 202.11.23.11
