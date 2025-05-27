@@ -30,7 +30,7 @@ L.marker([51.5, -0.09], { icon: markerIcon }).addTo(map);
 
 function getData() {
   if (validateIp(ipInput.value)) {
-    getAddress(ipInput.valuegit).then((data) => setInfo(data));
+    getAddress(ipInput.value).then((data) => setInfo(data));
   }
 }
 
