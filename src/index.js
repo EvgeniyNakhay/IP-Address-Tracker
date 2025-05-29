@@ -1,8 +1,7 @@
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
-import { addTileLayer, getAddress, validateIp } from "./helpers";
+import { addOffset, addTileLayer, getAddress, validateIp } from "./helpers";
 import icon from "../images/icon-location.svg";
-import { addOffset } from "./helpers/add-offset";
 
 const ipInput = document.querySelector(".search-bar__input");
 const btn = document.querySelector("button");
@@ -52,7 +51,9 @@ function setInfo(mapData) {
   map.setView([lat, lng]);
   L.marker([lat, lng], { icon: markerIcon }).addTo(map);
 
-  addOffset(map);
+  if (matchMedia("(max-width: 1023px)").matches) {
+    addOffset(map);
+  }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
