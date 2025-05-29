@@ -1,6 +1,6 @@
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
-import { addOffset, addTileLayer, getAddress, validateIp } from "./helpers";
+import { addTileLayer, getAddress, validateIp } from "./helpers";
 import icon from "../images/icon-location.svg";
 
 const ipInput = document.querySelector(".search-bar__input");
@@ -44,13 +44,13 @@ function setInfo(mapData) {
   const { lat, lng, country, timezone, region } = mapData.location;
   ipInfo.innerHTML = mapData.ip;
   locationInfo.innerHTML = country + " " + region;
+  console.log(mapData);
 
   timezoneInfo.innerHTML = timezone;
   ispInfo.innerHTML = mapData.isp;
 
   map.setView([lat, lng]);
   L.marker([lat, lng], { icon: markerIcon }).addTo(map);
-  addOffset(map);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
